@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageDefault.master.cs" Inherits="MasterPageDefault" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" runat="server" />
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <div class="Wrapper">
+        <div class="Header">
+            <div class="logo">
+            <asp:Image ID="ImageSiteLogo" runat="server" ImageUrl="Images/Logo.png" />
+                </div>
+            <br />
+            <asp:Menu ID="MenuMainNav" runat="server" Orientation="Horizontal" CssClass="MainNav" Font-Size="Large" ForeColor="White" StaticSubMenuIndent="16px">
+                <DynamicHoverStyle ForeColor="#66FFFF" />
+                <DynamicMenuItemStyle BackColor="Black" HorizontalPadding="10px" VerticalPadding="10px" ItemSpacing="2px" />
+                <Items>
+                    <asp:MenuItem NavigateUrl="Default.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="BikeListPage.aspx" Text="Bike List" Value="Bike List"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="ManufacturerDefault.aspx" Text="Manufacturer Page" Value="Manufacturer Page"></asp:MenuItem>
+                    <asp:MenuItem Text="Manufacturers" Value="Manufacturers" Selectable="False">
+                        <asp:MenuItem NavigateUrl="~/ManufacturerPage.aspx?id=1" Text="Honda" Value="Honda"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ManufacturerPage.aspx?id=7" Text="Kawasaki" Value="Kawasaki"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ManufacturerPage.aspx?id=6" Text="Suzuki" Value="Suzuki"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ManufacturerPage.aspx?id=5" Text="Yamaha" Value="Yamaha"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ManufacturerPage.aspx?id=3" Text="BMW" Value="BMW"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ManufacturerPage.aspx?id=4" Text="Ducati" Value="Ducati"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ManufacturerPage.aspx?id=9" Text="Triumph" Value="Triumph"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ManufacturerPage.aspx?id=8" Text="KTM" Value="KTM"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ManufacturerPage.aspx?id=2" Text="Aprilia" Value="Aprilia"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="BikeComparisonPage.aspx" Text="Compare Bikes" Value="New Item"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/DataDisplayPage.aspx" Text="Bike and Manufacturer Data" Value="Bike and Manufacturer Data"></asp:MenuItem>
+                </Items>
+                <StaticHoverStyle BackColor="White" ForeColor="Black" />
+                <StaticMenuItemStyle HorizontalPadding="20px" />
+                <StaticItemTemplate>
+                    <%# Eval("Text") %>
+                </StaticItemTemplate>
+            </asp:Menu>
+
+        </div>
+
+
+    <div class="Content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <div class="Footer">
+       <div class="row">
+           <div class="column">
+               <h2>Subscribe to the Newsletter</h2>
+                <p>To receive regular updates from us and hear the latest and greatest news.</p>
+               <asp:Button ID="ButtonSubscribe" runat="server" Text="Subscribe" CssClass="ButtonSubscribe" OnClick="ButtonSubscribe_Click" />
+              </div>
+           <div class="column">
+               <h2>SiteMap</h2>
+               <p style="margin:6px; width: 540px;">Sitemap: <asp:SiteMapPath ID="Web" runat="server"></asp:SiteMapPath>
+           </div>
+           <div class="column">
+               <h2>About Us</h2>
+                <p>
+                This site allows user to view information about Motorcycles stored in a Database. 
+                Such as Details aobut a specific bike, a list of all bikes in the database, different bike manufacturers, a comparison of two different bikes, and more!
+                </p>
+           </div>
+       </div>
+
+    </div>
+
+     </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPageDefault.master" AutoEventWireup="true" CodeFile="Manufacturer.master.cs" Inherits="Manufacturer" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    </asp:Content>
+
+
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+    <div class="twocol">
+
+        <div id="leftmenu">
+            
+                <%--<asp:SqlDataSource ID="SqlDataSourceManufacturerMenu" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringMotorcycleComparisonDB %>" ProviderName="<%$ ConnectionStrings:ConnectionStringMotorcycleComparisonDB.ProviderName %>" SelectCommand="SELECT [ManufacturerID], [ManufacturerName] FROM [Manufacturer]"></asp:SqlDataSource>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ManufacturerID" DataSourceID="SqlDataSourceManufacturerMenu" BackColor="Black" ForeColor="White" Height="100%" Font-Size="Large">
+                    <Columns>
+                        <asp:HyperLinkField DataNavigateUrlFields="ManufacturerID" DataNavigateUrlFormatString="ManufacturerPage.aspx?id={0}" DataTextField="ManufacturerName" HeaderText="Manufacturers" ItemStyle-ForeColor="White">
+                        <HeaderStyle Font-Size="Larger" />
+                        <ItemStyle ForeColor="White" />
+                        </asp:HyperLinkField>
+                    </Columns>
+                    <EditRowStyle ForeColor="White" />
+                    <RowStyle ForeColor="White" />
+                </asp:GridView>--%>
+
+                <asp:Menu ID="MenuManufacturerSideNav" runat="server">
+            <Items>
+                <asp:MenuItem Text="Manufacturers" Value="Manufacturers" Enabled="False" NavigateUrl="ManufacturerDefault.aspx"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ManufacturerPage.aspx?id=1" Text="Honda" Value="Honda"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ManufacturerPage.aspx?id=4" Text="Ducati" Value="Ducati"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ManufacturerPage.aspx?id=3" Text="BMW" Value="BMW"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ManufacturerPage.aspx?id=2" Text="Aprilia" Value="Aprilia"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ManufacturerPage.aspx?id=5" Text="Yamaha" Value="Yamaha"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ManufacturerPage.aspx?id=6" Text="Suzuki" Value="Suzuki"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ManufacturerPage.aspx?id=7" Text="Kawasaki" Value="Kawasaki"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ManufacturerPage.aspx?id=9" Text="Triumph" Value="Triumph"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ManufacturerPage.aspx?id=8" Text="KTM" Value="KTM"></asp:MenuItem>
+            </Items>
+                    <StaticHoverStyle ForeColor="#66FFFF" />
+            <StaticMenuItemStyle Font-Size="Large" ForeColor="White" VerticalPadding="10px" BorderStyle="None" />
+            <StaticMenuStyle BackColor="Black" HorizontalPadding="10px" />
+        </asp:Menu>
+
+    </div>
+
+        <asp:ContentPlaceHolder ID="LeftColumn" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <asp:ContentPlaceHolder ID="RightColumn" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </div>
+
+
+
+</asp:Content>
+
